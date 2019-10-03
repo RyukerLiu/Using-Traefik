@@ -17,3 +17,10 @@
 5. Check Traefik load-balances between the two instances of your service   
 `curl -H Host:whoami.docker.localhost http://127.0.0.1`
 
+- Dashboard  
+`http://localhost:8080`
+
+- Check Traefik API rawdata  
+`http://localhost:8080/api/rawdata`
+
+
