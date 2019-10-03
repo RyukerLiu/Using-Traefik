@@ -2,6 +2,7 @@ version: '3'
 
 services:
   reverse-proxy:
+    network_mode: bridge
     # The official v2.0 Traefik docker image
     image: traefik:v2.0
     # Enables the web UI and tells Traefik to listen to docker
@@ -15,7 +16,7 @@ services:
       # So that Traefik can listen to the Docker events
       - /var/run/docker.sock:/var/run/docker.sock
   whoami:
+    network_mode: bridge
     # A container that exposes an API to show its IP address
     image: containous/whoami
-    labels:
-      - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"
+
