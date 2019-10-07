@@ -1,0 +1,13 @@
+# http routing section
+[http]
+  [http.routers]
+     # Define a connection between requests and services
+     [http.routers.to-web]
+      rule = "Host(`localhost`)"
+      service = "myweb"
+
+  [http.services]
+    # Define how to reach an existing service on our infrastructure
+    [http.services.myweb.loadBalancer]
+      [[http.services.myweb.loadBalancer.servers]]
+        url = "http://localhost:8000"
