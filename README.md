@@ -23,4 +23,9 @@
 - Check Traefik API rawdata  
 `http://localhost:8080/api/rawdata`
 
+## Use Traefik with Official Docker Image
+
+```docker run -d -p 8080:8080 -p 80:80 \
+    -v $PWD/traefik.toml:/etc/traefik/traefik.toml traefik:v2.0```
+
 
